@@ -1,0 +1,3 @@
+.header on
+.mode column
+.load /home/amartin/anteliris/signet/res/external/extension-functions.so

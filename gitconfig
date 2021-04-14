@@ -1,0 +1,21 @@
+[user]
+	name = Andrew Owen Martin
+	email = andrew@aomartin.co.uk
+[color]
+	ui = true
+[core]
+	editor = vim
+	excludesfile = ~/.gitignore_global
+[merge]
+	# conflictstyle = diff3
+	log = 20
+#[push]
+#	default = simple
+[alias]
+	cdiff = diff --word-diff
+[diff]
+	tool = vimdiff
+
+[pager]
+	branch = false
+        check = false
