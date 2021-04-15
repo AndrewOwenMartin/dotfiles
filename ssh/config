@@ -1,6 +1,6 @@
 host github.com
 user git
-identityfile ~/.ssh/platina2github
+identityfile ~/.ssh/here2github
 
 host platina
 hostname 192.168.178.51
