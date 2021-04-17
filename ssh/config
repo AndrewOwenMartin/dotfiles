@@ -1,6 +1,6 @@
 host github.com
 user git
-identityfile ~/.ssh/platina2github
+identityfile ~/.ssh/here2github
 
 host platina
 hostname 192.168.178.51
@@ -9,6 +9,107 @@ identityfile ~/.ssh/here2platina
 host home
 hostname server.aomartin.co.uk
 identityfile ~/.ssh/here2home
+
+host dreyfus
+hostname 192.168.178.52
+identityfile ~/.ssh/here2dreyfus
+
+################
+# Start WeGotPop
+################
+
+# Strongholds
+
+## Sandbox Ireland
+Host sbx-eu-west-1-stronghold
+    HostName stronghold.uk.sandbox.wegotpop.com
+    IdentityFile ~/.ssh/id_ed25519
+    User ubuntu
+
+## Production Ireland
+Host prd-eu-west-1-stronghold
+    HostName stronghold.uk.wegotpop.com
+    IdentityFile ~/.ssh/id_ed25519
+    User ubuntu
+
+## Production Oregon
+Host prd-us-west-2-stronghold
+    HostName stronghold.us.wegotpop.com
+    IdentityFile ~/.ssh/id_ed25519
+    User ubuntu
+
+## Preprod Ireland
+Host ppd-eu-west-1-stronghold
+    HostName stronghold.uk.preprod.wegotpop.com
+    IdentityFile ~/.ssh/id_ed25519
+    User ubuntu
+
+
+# ECS instances
+
+## Production Ireland
+Host prd-eu-west-1-ecs/*
+    User ec2-user
+    ProxyCommand ssh -W $(echo %h | sed -E s,^prd-eu-west-1-ecs\/,,):%p prd-eu-west-1-stronghold
+    IdentityFile ~/.ssh/prd-eu-west-1.pem
+
+## Production Oregon
+Host prd-us-west-2-ecs/*
+    User ec2-user
+    ProxyCommand ssh -W $(echo %h | sed -E s,^prd-us-west-2-ecs\/,,):%p prd-us-west-2-stronghold
+    IdentityFile ~/.ssh/prd-us-west-2.pem
+
+## Preprod Ireland
+Host ppd-eu-west-1-ecs/*
+    User ec2-user
+    ProxyCommand ssh -W $(echo %h | sed -E s,^ppd-eu-west-1-ecs\/,,):%p ppd-eu-west-1-stronghold
+    IdentityFile ~/.ssh/ppd-eu-west-1.pem
+
+
+# Consul instances
+
+## Production Ireland
+Host prd-eu-west-1-ubuntu/*
+    User ubuntu
+    ProxyCommand ssh -W $(echo %h | sed -E s,^prd-eu-west-1-ubuntu\/,,):%p prd-eu-west-1-stronghold
+    IdentityFile ~/.ssh/prd-eu-west-1.pem
+
+## Production Oregon
+Host prd-us-west-2-ubuntu/*
+    User ubuntu
+    ProxyCommand ssh -W $(echo %h | sed -E s,^prd-us-west-2-ubuntu\/,,):%p prd-us-west-2-stronghold
+    IdentityFile ~/.ssh/prd-us-west-2.pem
+
+## Preprod Ireland
+Host ppd-eu-west-1-ubuntu/*
+    User ubuntu
+    ProxyCommand ssh -W $(echo %h | sed -E s,^ppd-eu-west-1-ubuntu\/,,):%p ppd-eu-west-1-stronghold
+    IdentityFile ~/.ssh/ppd-eu-west-1.pem
+
+
+# Buildkite instances
+
+## Production Ireland
+Host prd-eu-west-1-bk/*
+    User ubuntu
+    ProxyCommand ssh -W $(echo %h | sed -E s,^prd-eu-west-1-bk\/,,):%p prd-eu-west-1-stronghold
+    IdentityFile ~/.ssh/prd-eu-west-1-bk.pem
+
+## Production Oregon
+Host prd-us-west-2-bk/*
+    User ubuntu
+    ProxyCommand ssh -W $(echo %h | sed -E s,^prd-us-west-2-bk\/,,):%p prd-us-west-2-stronghold
+    IdentityFile ~/.ssh/prd-us-west-2-bk.pem
+
+## Preprod Ireland
+Host ppd-eu-west-1-bk/*
+    User ubuntu
+    ProxyCommand ssh -W $(echo %h | sed -E s,^ppd-eu-west-1-bk\/,,):%p ppd-eu-west-1-stronghold
+    IdentityFile ~/.ssh/ppd-eu-west-1-bk.pem
+
+##############
+# End WeGotPop
+##############
 
 host *
 user amartin
