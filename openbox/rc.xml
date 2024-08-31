@@ -225,17 +225,17 @@
     </keybind>
     <keybind key="S-A-w">
       <action name="Execute">
-        <command>x-www-browser</command>
+        <command>firefox</command>
       </action>
     </keybind>
     <keybind key="S-A-t">
       <action name="Execute">
-        <command>x-terminal-emulator -t main</command>
+        <command>st -t main</command>
       </action>
     </keybind>
     <keybind key="S-A-v">
       <action name="Execute">
-        <command>st -e alsamixer</command>
+        <command>pavucontrol</command>
       </action>
     </keybind>
     <!-- Launch scrot when Print is pressed -->
