@@ -19,3 +19,5 @@
 [pager]
 	branch = false
         check = false
+[init]
+	defaultBranch = main
