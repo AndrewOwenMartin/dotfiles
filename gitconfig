@@ -1,6 +1,7 @@
 [user]
 	name = Andrew Owen Martin
 	email = andrew@aomartin.co.uk
+	signingkey = /home/amartin/.ssh/here2github-signing.pub
 [color]
 	ui = true
 [core]
@@ -21,3 +22,5 @@
         check = false
 [init]
 	defaultBranch = main
+[gpg]
+	format = ssh
