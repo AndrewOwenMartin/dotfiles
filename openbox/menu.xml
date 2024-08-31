@@ -6,11 +6,11 @@
                 file:///usr/share/openbox/menu.xsd">
 
 <menu id="root-menu" label="Openbox 3">
-  <item label="Terminal emulator">
-    <action name="Execute"><execute>x-terminal-emulator</execute></action>
+  <item label="Terminal">
+    <action name="Execute"><execute>st</execute></action>
   </item>
-  <item label="Web browser">
-    <action name="Execute"><execute>x-www-browser</execute></action>
+  <item label="Firefox">
+    <action name="Execute"><execute>firefox</execute></action>
   </item>
   <!-- This requires the presence of the 'openbox-menu' package to work -->
   <!-- <menu id="/Debian" /> -->
@@ -20,12 +20,15 @@
   <!-- <item label="ObConf"> -->
   <!-- <action name="Execute"><execute>obconf</execute></action> -->
   <!-- </item> -->
-  <item label="Notepad"><action name="Execute"><execute>mousepad</execute></action></item>
+  <item label="Notepad"><action name="Execute"><execute>gedit</execute></action></item>
   <item label="Display"><action name="Execute"><execute>arandr</execute></action></item>
-  <item label="Network"><action name="Execute"><execute>wicd-client</execute></action></item>
-  <item label="Volume"><action name="Execute"><execute>alsamixergui</execute></action></item>
-  <item label="Wallpaper"><action name="Execute"><execute>nitrogen</execute></action></item>
+  <item label="Volume"><action name="Execute"><execute>pavucontrol</execute></action></item>
+  <item label="VLC"><action name="Execute"><execute>vlc</execute></action></item>
+  <item label="Wifi"><action name="Execute"><execute>urxvt -e impala</execute></action></item>
   <item label="Lock screen"><action name="Execute"><execute>slock</execute></action></item>
+
+  <!-- <item label="Network"><action name="Execute"><execute>wicd-client</execute></action></item> -->
+  <!-- <item label="Wallpaper"><action name="Execute"><execute>nitrogen</execute></action></item> -->
 
   <separator />
   <item label="Reconfigure">
