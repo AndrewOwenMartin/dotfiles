@@ -1,3 +1,5 @@
+# Consider removing any `ln` lines and running this, then calling `git
+# checkout` to get it back to normal.
 ln -s /home/amartin/dotfiles/gitconfig ~/.gitconfig
 ln -s /home/amartin/dotfiles/gitignore_global ~/.gitignore_global
 ln -s /home/amartin/dotfiles/lesskey ~/.lesskey
